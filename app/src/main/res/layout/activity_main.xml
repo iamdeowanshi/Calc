@@ -1,8 +1,5 @@
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,8 +20,24 @@
             android:layout_height="wrap_content"
             android:editable="false"
             android:layout_marginTop="20dp"
+            android:typeface="monospace"
             android:text="0"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
             android:textSize="65sp"
+            android:inputType="number"
+            android:textAlignment="gravity"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:layout_marginTop="20dp"
+            android:typeface="monospace"
+            android:textSize="40sp"
             android:inputType="number"
             android:textAlignment="gravity"
             android:gravity="right"/>
@@ -39,239 +52,133 @@
         android:layout_weight="3"
         android:layout_below="@+id/ll1">
 
-        <GridLayout
+            <android.support.v7.widget.GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:background="#353535"
-            android:columnCount="3"
-            android:rowCount="4"
-            android:alignmentMode="alignMargins">
+            app:columnCount="3"
+            app:rowCount="4"
+            app:alignmentMode="alignMargins">
 
             <Button
                 android:id="@+id/button7"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="@drawable/selector"
                 android:text="7"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
                 android:onClick="button7Clicked"
-                android:gravity="center"/>
-
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button8"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="@drawable/selector"
                 android:text="8"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:outlineProvider="none"
-                android:gravity="center"
-                android:onClick="button8Clicked" />
+                android:onClick="button8Clicked"
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button9"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="@drawable/selector"
                 android:text="9"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:outlineProvider="none"
                 android:onClick="button9Clicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button4"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_below="@+id/button7"
-                android:background="@drawable/selector"
                 android:text="4"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:outlineProvider="none"
                 android:onClick="button4Clicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button5"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_below="@+id/button7"
-                android:background="@drawable/selector"
                 android:text="5"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
                 android:onClick="button5Clicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button6"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:layout_below="@+id/button9"
-                android:layout_toRightOf="@+id/button5"
-                android:background="@drawable/selector"
                 android:text="6"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
                 android:onClick="button6Clicked"
-                android:gravity="center"/>
-
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button1"
-                android:background="@drawable/selector"
                 android:text="1"
-                android:textColor="@android:color/white"
-                android:outlineProvider="none"
-                android:textSize="30dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:onClick="button1Clicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button2"
-                android:background="@drawable/selector"
-                android:singleLine="false"
                 android:text="2"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:onClick="button2Clicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button3"
-                android:background="@drawable/selector"
                 android:text="3"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:onClick="button3Clicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/buttonDot"
-                android:background="@drawable/selector"
                 android:text="."
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:outlineProvider="none"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:onClick="buttonDotClicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/button0"
-                android:background="@drawable/selector"
                 android:text="0"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:onClick="button0Clicked"/>
+                android:onClick="button0Clicked"
+                style="@style/DigitButtonStyle"/>
 
             <Button
                 android:id="@+id/buttonEqual"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="@drawable/selector"
                 android:text="="
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
-                android:textSize="30dp"
                 android:onClick="buttonEqualClicked"
-                android:gravity="center"/>
+                style="@style/DigitButtonStyle"/>
+</android.support.v7.widget.GridLayout>
 
 
-        </GridLayout>
-
-        <GridLayout
-            android:layout_width="match_parent"
+        <android.support.v7.widget.GridLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="#c9656565"
             android:layout_gravity="bottom"
-            android:rowCount="5"
-            android:layout_weight="3"
-            android:columnCount="1"
-            android:alignmentMode="alignMargins">
+            app:rowCount="5"
+            app:columnCount="1"
+            app:alignmentMode="alignMargins">
 
             <Button
                 android:id="@+id/buttonDel"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="#c9656565"
                 android:text="Del"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
                 android:onClick="buttonDelClicked"
-                android:gravity="center"/>
+                style="@style/OperatorButtonStyle"/>
 
             <Button
                 android:id="@+id/buttonDiv"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="#c9656565"
                 android:text="/"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
                 android:onClick="buttonDivClicked"
-                android:gravity="center"/>
+                style="@style/OperatorButtonStyle"/>
 
             <Button
                 android:id="@+id/buttonMul"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="#c9656565"
                 android:text="*"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
                 android:onClick="buttonMulClicked"
-                android:gravity="center"/>
+                style="@style/OperatorButtonStyle"/>
 
             <Button
                 android:id="@+id/buttonMinus"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="#c9656565"
                 android:text="-"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
                 android:onClick="buttonMinusClicked"
-                android:gravity="center"/>
+                style="@style/OperatorButtonStyle"/>
 
             <Button
                 android:id="@+id/buttonPlus"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:background="#c9656565"
                 android:text="+"
-                android:outlineProvider="none"
-                android:textColor="@android:color/white"
                 android:onClick="buttonPlusClicked"
-                android:gravity="center"/>
+                style="@style/OperatorButtonStyle"/>
 
-        </GridLayout>
+       </android.support.v7.widget.GridLayout>
 
 
     </LinearLayout>
 
 </LinearLayout>
-</ScrollView>
 

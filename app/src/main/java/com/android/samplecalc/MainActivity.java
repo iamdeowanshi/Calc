@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import bsh.Interpreter;
 
 public class MainActivity extends Activity {
 
@@ -26,9 +27,11 @@ public class MainActivity extends Activity {
     private Button minus;
     private Button del;
     private TextView data;
-    Character op = 'q';
-    private String str ="";
-    private double num,numtemp;;
+    private TextView result;
+    private char op = 'q';
+    private String str = "";
+    private String temp = "";
+    private double num,numtemp,ans;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,9 +54,8 @@ public class MainActivity extends Activity {
         equal = (Button)findViewById(R.id.buttonEqual);
         minus = (Button)findViewById(R.id.buttonMinus);
         del = (Button)findViewById(R.id.buttonDel);
-
+        result = (TextView)findViewById(R.id.textResult);
         data = (TextView)findViewById(R.id.textdata);
-
 
     }
 
@@ -106,26 +108,39 @@ public class MainActivity extends Activity {
 
     public void buttonPlusClicked(View v) {
         op = '+';
+        str = str + op;
+        temp = "";
+        data.setText(str);
         perform();
     }
 
     public void buttonMinusClicked(View v) {
         op = '-';
+        str = str + op;
+        temp = "";
+        data.setText(str);
         perform();
     }
 
     public void buttonDivClicked(View v) {
         op = '/';
+        str = str + op;
+        temp = "";
+        data.setText(str);
         perform();
     }
 
     public void buttonMulClicked(View v) {
         op = '*';
+        temp = "";
+        str = str + op;
+        data.setText(str);
         perform();
     }
 
     public void buttonEqualClicked(View v) {
-        calculate();
+        str = "";
+        data.setText(str);
     }
 
     public void buttonDelClicked(View v) {
@@ -133,40 +148,52 @@ public class MainActivity extends Activity {
     }
 
     private void reset() {
-        str ="";
-        op ='q';
+        str = "";
+        temp = "";
+        op = 'q';
         num = 0;
         numtemp = 0;
+        ans = 0;
         data.setText("");
+        result.setText("");
     }
 
    private void insert(double n) {
         try {
             str = str + Integer.toString((int) n);
-
-            num = Double.valueOf(str);
+            temp = temp + Integer.toString((int) n);
+            num = Double.valueOf(temp);
+            calculate();
         }
        catch (NumberFormatException e) {}
        display();
     }
 
     private void perform() {
-        String s = op.toString();
-        data.setText(s);
-        str = "";
-        numtemp = num;
+        //String s = op.toString();
+        //data.setText(s);
+        dot.setEnabled(true);
+        temp = "";
+
     }
 
     private void calculate() {
-        if(op == '+')
-            num = numtemp+num;
+      /*  if(op == '+')
+            ans = ans + num;
+
         else if(op == '-')
-            num = numtemp- num;
+            ans = ans - num;
+
         else if(op == '/')
-            num = numtemp/num;
+            ans = ans / num;
+
         else if(op == '*')
-            num = numtemp*num;
-        data.setText(""+num);
+            ans = ans * num;
+*/
+
+      result = new Interpreter().eval(str);
+
+        result.setText("" + ans);
     }
 
     private void display() {
