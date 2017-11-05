@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/root"
+    tools:context="com.example.aaditya.integercalculator.CalculatorActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/display"
+        android:text="0"
+        android:paddingRight="10dp"
+        android:layout_weight="0.7"
+        android:textSize="50sp"
+        android:background="@android:color/transparent"
+        android:gravity="bottom|right" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3">
+
+        <GridLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="#353535"
+            android:columnCount="3"
+            android:rowCount="4"
+            android:alignmentMode="alignMargins">
+
+            <Button
+                android:id="@+id/button7"
+                android:text="7"
+
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button8"
+                android:text="8"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button9"
+                android:text="9"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button4"
+                android:text="4"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button5"
+                android:text="5"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button6"
+                android:text="6"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button1"
+                android:text="1"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button2"
+                android:text="2"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button3"
+                android:text="3"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/buttonClear"
+                android:text="C"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/button0"
+                android:text="0"
+                style="@style/DigitButtonStyle"/>
+
+            <Button
+                android:id="@+id/buttonEqual"
+                android:text="="
+                style="@style/DigitButtonStyle"/>
+        </GridLayout>
+
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#c9656565"
+            android:layout_gravity="bottom"
+            android:rowCount="4"
+            android:columnCount="1"
+            android:alignmentMode="alignMargins">
+
+            <Button
+                android:id="@+id/buttonplus"
+                android:text="+"
+                style="@style/OperatorButtonStyle"/>
+
+            <Button
+                android:id="@+id/buttonDiv"
+                android:text="/"
+                style="@style/OperatorButtonStyle"/>
+
+            <Button
+                android:id="@+id/buttonMul"
+                android:text="*"
+                style="@style/OperatorButtonStyle"/>
+
+            <Button
+                android:id="@+id/buttonMinus"
+                android:text="-"
+                style="@style/OperatorButtonStyle"/>
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
